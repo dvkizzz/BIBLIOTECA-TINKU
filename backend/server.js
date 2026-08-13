@@ -32,6 +32,10 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Ocurrió un error en el servidor.' });
 });
 
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Servidor corriendo en el puerto ${PORT}`);
+    });
+}
+
+module.exports = app;

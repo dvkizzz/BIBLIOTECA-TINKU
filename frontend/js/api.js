@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api';
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const API_URL = isLocal ? 'http://localhost:3000/api' : '/api';
 
 const api = {
     async fetch(endpoint, options = {}) {
@@ -54,7 +55,7 @@ const api = {
     logout() {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        window.location.href = '/frontend/login.html';
+        window.location.href = 'login.html';
     },
 
     getCurrentUser() {
