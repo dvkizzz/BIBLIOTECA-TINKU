@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - BIBLIOTECA TINKU</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="catalog-container">
+        <div class="header">
+            <h2>Catálogo de Libros</h2>
+            <div class="nav-links" id="navLinks"></div>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Buscar por título..." style="flex: 1;">
+            <select id="categoryFilter">
+                <option value="">Todas las categorías</option>
+                <option value="Ficción">Ficción</option>
+                <option value="No Ficción">No Ficción</option>
+                <option value="Ciencia">Ciencia</option>
+                <option value="Historia">Historia</option>
+            </select>
+            <label style="display:flex; align-items:center; gap:5px;">
+                <input type="checkbox" id="availableFilter"> Solo disponibles
+            </label>
+        </div>
+
+        <div id="messageBox" class="message"></div>
+        <div class="books-grid" id="booksGrid"></div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/libros.js"></script>
+</body>
+</html>
